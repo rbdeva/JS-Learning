@@ -1,0 +1,30 @@
+.login-button{
+  background-color: pink;
+  border-color: black;
+  font-weight: bold;
+  font-size: 10px;
+  cursor: pointer;
+margin: 20px;
+  height: 50px;
+  width: 100px;
+  color: white;
+  box-shadow: horizonatl vertical blur color;
+  box-shadow: 10px 10px 100px red;
+  
+  
+  
+
+}
+.login-button:hover{
+  background-color: black;
+  padding: 100px;
+  transition: background-color 120s;
+
+
+
+
+}
+
+.login-button:active{
+  background-color: white;
+}

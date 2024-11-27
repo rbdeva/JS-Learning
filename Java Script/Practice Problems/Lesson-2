@@ -1,0 +1,17 @@
+Math.floor(2.8)
+Math.ceil(2.2)
+
+
+
+
+var IC=25;
+var IF=(25*9/5)+32;
+console.log(IF);
+
+var MF=86;
+var MC=(86-32)*5/9;
+console.log(MC);
+
+var NC=-5;
+var NF=(-5*9/5)+32;
+console.log(NF);
