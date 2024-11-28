@@ -3,6 +3,12 @@
   <head>
     <title>DOM Projects</title>
     <style>
+
+      body{
+        font-family: Arial;
+      }
+
+
       .subscribe-button{
         border: none;
         background-color: black;
@@ -11,9 +17,30 @@
         font-weight: bold;
         border-radius: 50px;
         cursor: pointer;
+        margin-bottom: 30px;
 
       }
 
+      .is-subscribed{
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+
+      .cost-input{
+        font-size: 15px;
+        padding: 10px;
+
+         
+      }
+
+      .calculate-button{
+        background-color: green;
+        color: white;
+        border: none;
+        font-size: 15px;
+        padding: 12px 15px;
+        cursor: pointer;
+      }
 
     </style>
   </head>
@@ -24,13 +51,13 @@
     " class="js-subscribe-button subscribe-button ">Subscribe</button>
 
     <p>Amazon Shipping Calculator</p>
-    <input placeholder="Cost of Order" class="js-cost-input"
+    <input placeholder="Cost of Order" class="js-cost-input cost-input"
     onkeydown=" 
      handleCostKeyDown(event);
     ">
     <button onclick="
     calculateTotal();
-    ">Calculate</button>
+    " class="calculate-button">Calculate</button>
 
     <p class="js-total-cost"> 
 
@@ -78,9 +105,17 @@
 
         if(buttonElement.innerText==='Subscribe'){
         buttonElement.innerHTML ='Subscribed';
+        buttonElement.classList.add('is-subscribed');
+        /*     classList is an object and it has properties and methods.
+
+    one methid is .add(). it has an class to the element
+    */
       }
       else{
         buttonElement.innerHTML = 'Subscribe';
+        buttonElement.classList.remove('is-subscribed');
+        //    classList has another method called remove()
+
           }
           }      
 
