@@ -1,6 +1,16 @@
-const todoList = ['make dinner', 'wash dishes']; //Empty array
-for(let i=0;i<){
+const todoList = []; //Empty array
 
+renderTodoList();
+function renderTodoList(){
+    let todoListHTML ='';
+    for(let i=0;i<todoList.length;i++){
+
+    let todo = todoList[i];
+    let html = `<p>${todo}</p>`;
+    todoListHTML += html;
+    }
+    console.log(todoListHTML);
+    document.querySelector('.js-todo-list').innerHTML = todoListHTML;
 }
 
 function addTodo() {
@@ -10,4 +20,6 @@ function addTodo() {
   console.log(todoList);
 
   inputElement.value = ' ';
+
+renderTodoList();
 }
