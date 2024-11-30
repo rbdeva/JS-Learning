@@ -64,6 +64,68 @@
             we used inputElement.value = ' '; to remove the added todoList from the <input> after clicking add button
             */
 
+
+            /*
+               Like objects, arrays are references too
+                  const array1 = [1, 2, 3];
+                  const array2 = array; here array2 wont stores the vaues of array1 but it stores the reference of array1
+                  array2.push(4); 
+                  console.log(array1); o/p 1,2 3, 4
+                  console.log(array2); o/p 1,2 3, 4
+
+                  To avoid this behavior we can use method called .slice()
+                  const array1 = [1, 2, 3];
+                  const array2 = array.slice();
+                  Here array2 makes copies of a values not references, now these two variables points to two differnt arrays
+                  array2.push(4); 
+                  console.log(array1); o/p 1,2 3
+                  console.log(array2); o/p 1,2 3, 4
+
+                  Destrucuting: 
+                  const[firstValue, secondValue] = [1, 2, 3];
+                  console.log(firstValue); o/p: 1
+
+              Loops has 2 fearures: break and continue.
+              break: exit a loop early
+
+              for(let i=0;i<10;i++){
+              console.log(i)
+              if(i===8){
+              break;
+              }}
+              o/p: 1 2 3 4 5 6 7 8 and stops here
+              out[uts are in stringh line
+
+              continue: skips one iteration
+
+              
+              for(let i=0;i<10;i++){
+              if(i===3){
+              continue;}
+              console.log(i)
+              if(i===8){
+              break;
+              }}
+              o/p: 1 2 4 5 6 7 8 and stops here
+
+              once check while and continue together: 9:22 hrs
+
+              return can immediaty output the result
+
+              Inthis lesonL
+
+              Arrays
+              Loops
+              Accumulator pattern
+              Todo
+              Arrays are refrences, destrcutring
+              more featues of loops: break, continue, loops inside a function
+
+
+
+               
+            */
+
   </script>
 </body>
 </html>
