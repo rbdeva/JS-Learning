@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Functions</title>
+    </head>
+    <body>
+      <script>
+
+
+
+        /* Review of functions */
+        function greeting(){
+          console.log('hello');
+        }
+        greeting();
+/*
+    Functions  are values.
+    Types of value: numbers, strings, booleans
+    example: const num =2;
+    like the same way we can save a function inside a variable;
+    example:
+    const
+
+*/
+        const function1 = function greeting() {
+          console.log('hello2');
+        };
+        console.log(function1);
+        console.log(typeof function1);
+        function1();
+
+/*
+   We are accessing the abve function using a variable so we dont need function name anymore, s we can remove greeting
+   const function1 = function greeting() 
+
+   Ths is called as anonymous function: a function withput a name
+
+   Hoisting: It will let us call a  function before we write it and hoisting doesnt work when we store a function in a  varaible
+
+*/
+
+/*
+Te below exmple is a method, function inside a object
+
+*/
+
+    const object1 = {
+      num: 2,
+      fun: function greetng(){
+        console.log('hello3');
+      }
+    };
+
+    object1.fun();
+
+
+/*
+
+
+we can remve fnction name 
+
+
+const object1 = {
+      num: 2,
+      fun: function (){
+        console.log('hello3');
+      }
+    };
+
+    object1.fun();
+*/
+
+    function display(param){
+      console.log(param);
+    }
+    display(2);
+
+/*
+The above example is called passing a value to a function,
+As function are also a value, we can also passs a function into a function
+
+In he below example we called param(); instead of console..log because its a function
+
+This is called passing a function into a function
+run(function(){
+  console.log('hello4');
+});Tis is called a callback function
+*/
+function run(param){
+  param();
+}
+run(function(){
+  console.log('hello4');
+});
+
+/*
+setTimeout() - allows us to run a function n the future
+*/
+
+        </script>
+    </body>
+  
+</html>
