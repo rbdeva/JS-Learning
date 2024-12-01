@@ -7,7 +7,6 @@
       <script>
 
 
-
         /* Review of functions */
         function greeting(){
           console.log('hello');
@@ -94,9 +93,107 @@ run(function(){
 });
 
 /*
-setTimeout() - allows us to run a function n the future
+setTimeout() - allows us to run a function in the future and is a built in function and takes 2 parameters
+1. a function we want to run in the future
+2. how long to wait before running this functiom in ms
+
+1000 ms= one sec;
+
+*/
+setTimeout(function(){
+  console.log('timeout');
+}, 3000  );
+
+/* It will print timeout after 3 second */
+
+console.log('next line');
+/* 
+
+Asynchronous code: wont wait for a line to finish before going to the next line.
+setTimeout() function  wont wait 3 seconds to finish it just set timer and immediately goes to the next line and this is called asynchronous code
+
+Synchronous code: will wait for one line to finish before ging to the next line.
+
+*/
+setTimeout(function(){
+  console.log('timeout');
+  console.log('timeout2'); /* the code insde this function is synchronous code and it will run line by line .
+  
+  All code we normally write always a synchrnous code, run line by line.
+  The only few times  the code becomes asynchronous is when we use special fnctions like setTimeout();
+
+  Advantage of setTimeout being asynchronous is : it wont stop/block out code for 3 seconds, it just set timer in the background.
+  Example i alarm clock timer.
+
+
+  */
+}, 3000  );
+
+
+console.log('next line');
+
+
+/* setInterval() is another built in function and it takes two parameters
+1. A function we want to run in the future
+2. A number in milliseconds
+
+It will keep running the function for every 3 seconds.
+
+setInterval is also asynchrnous
+
+It will KEEP running in the future
+*/
+setInterval( function(){
+  console.log('interval')
+}, 3000);
+
+console.log('next line 2');
+
+
+/* Another way to loop through an array.
+Earlier we loopthorugh using for loop. 
+Another way is using a method called .forEach()
+
 */
 
+[
+  'make dinner',
+  'make dishes',
+  'watch youtube'
+].forEach(function(value, index){
+  console.log(index);
+  console.log(value);
+});
+
+/* 
+Here, the first value saves in the parameter and runs the function and then it will take the second value , save it in the parameter and run the function.
+
+Another feature is: we can give another parameter and it is index. For first value index will be 0 second value index will be 1...
+*/
+
+/* 
+cntinue let us skip to the next iteration
+.forEach() method dont have continue so we can use by return statement
+
+for example: if the value is wash dishes we are going to skip it
+
+*/
+
+[
+  'make dinner',
+  'make dishes',
+  'watch youtube'
+].forEach(function(value, index){
+  if(value === 'wash dishes'){
+    return;  /* Does same thing as continue */
+  }
+  console.log(index);
+  console.log(value);
+});
+
+/* break; let us exit from the loop earlier
+But theres no easy way to break forEach loop. if we need to use break thenits better to use for loop.
+*/
         </script>
     </body>
   

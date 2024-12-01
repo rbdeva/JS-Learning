@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    /* Arrow Function: work same as regular functions 
+    The below two functins shows the difference b/w to function types
+    */
+   /*-----------
+
+    const regularFunction = function(param, param2){
+      console.log('hello');
+      return 5;
+    }
+  regularFunction();
+    const arrowFunction = (param, param2) => {
+      console.log('hello');
+      return 5;
+    };
+    arrowFunction();
+    -----------
+    */
+
+    /*Arrow functions have the shortcut that reglr functions dont have */
+    
+ /* We can remove () if we have only parameter in arrow functions */
+
+    const oneParam = param => { 
+     
+      console.log(param+1);
+    }
+    oneParam(2);
+
+
+    const oneLine = () => { 
+      return 2+3;
+      }
+    /* If arrow function only has one like like this then we can write in the same  line and   { } i optional and can remove return  too  and called one line arrow function*/
+    const oneLine1 = () =>   2+3 ;
+    console.log(oneLine1());
+
+
+      
+
+
+  </script>
+</body>
+</html>
