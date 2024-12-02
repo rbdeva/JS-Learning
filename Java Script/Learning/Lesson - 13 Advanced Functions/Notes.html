@@ -6,6 +6,9 @@
   <title>Document</title>
 </head>
 <body>
+  <button onclick="
+    
+    " class="js-button">Click</button>
   <script>
 
     /* Arrow Function: work same as regular functions 
@@ -30,19 +33,63 @@
     
  /* We can remove () if we have only parameter in arrow functions */
 
+
+/* ||||||||||
     const oneParam = param => { 
      
       console.log(param+1);
     }
     oneParam(2);
 
+  |||||||||| */
 
+/* ((((((()))))))
     const oneLine = () => { 
       return 2+3;
       }
+      ((((((())))))) */
     /* If arrow function only has one like like this then we can write in the same  line and   { } i optional and can remove return  too  and called one line arrow function*/
+    /* <<<<<<<<<<
     const oneLine1 = () =>   2+3 ;
     console.log(oneLine1());
+    <<<<<<<<<<< */
+
+
+
+    /* .addEventListener() - lets us run some code when we interact with the element, similar to onclick
+    Has two parameters 1. event- what type of interaction we want to listen for
+    2. Afun we want to run when we click this function.
+    
+    Here, we are using arrow function because we are passing a function into another function
+    
+    */
+    const buttonElement = document.querySelector('.js-button');
+
+    const eventListener = () => {
+      console.log('click');
+    }
+    buttonElement.addEventListener('click', eventListener);
+    /* output is click */
+
+    /* .addEventListener has some advantages: 
+    1. multiple event listeners for an event
+    2. we can remove an event listener using a method called .removeEventListener();
+
+    */
+/* 1. multiple event listeners for an event */
+    buttonElement.addEventListener('click', () => {
+      console.log('click2');
+    })
+    /* output is click and click2 */
+
+    /* .removeEventListener(); also has 2 parameters,
+    1. event
+    2.function we want to remove 
+    Here we saved a functin inside a variable called eventListener because we have can access it by name
+    */
+
+    buttonElement.removeEventListener('click', eventListener);
+    /* output is click2 and it wont run 1st function because we removed it*/
 
 
       

@@ -45,7 +45,49 @@ let score = JSON.parse(localStorage.getItem('score')) || {
       }
       
     }
-    localStorage.getItem()
+
+
+    document.querySelector('.js-rock-button').addEventListener('click', () =>{
+      playGame('rock');
+    });
+
+    /* Here we actuall give a function to addEventListeneer but we cant use playGame('rock'), becauseit just call playGame() and give us a return value, it will be ndefined
+    For example: document.querySelector('.js-rock-button').addEventListener('click', rockPlay('rock'));  */
+
+    document.querySelector('.js-paper-button').addEventListener('click', () =>{
+      playGame('paper');
+    });
+
+    document.querySelector('.js-scissors-button').addEventListener('click', () => {
+      playGame('scissors');
+    });
+
+    /* We are going to add eventlistener to the body so when we typpe r then it will select rock etc., */
+      
+    /* The below code tells what key we typed and print it.
+      
+    document.body.addEventListener('keydown', (event) => {
+
+      console.log(event.key);
+  
+    });
+
+    */
+   document.body.addEventListener('keydown', (event) => {
+    if(event.key === 'r' || event.key === 'R'){
+      playGame('rock');
+    }
+    else if(event.key === 'p' || event.key === 'P'){
+      playGame('paper');
+    }
+    else if(event.key === 's' || event.key ==='S'){
+      playGame('scissors');
+    }
+   })
+
+
+
+
     function playGame(playerMove){
       const computerMove = pickComputerMove();   //Trick //Scope
       let result='';
