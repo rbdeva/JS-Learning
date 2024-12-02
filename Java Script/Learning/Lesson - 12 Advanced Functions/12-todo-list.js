@@ -17,10 +17,8 @@ function renderTodoList(){
     let html = `
     <div>${name}</div>
     <div>${dueDate}</div>
-    <button onclick=" 
-    todoList.splice(${index}, 1);
-    renderTodoList();
-    "class="delete-todo-button"
+    <button 
+    class="delete-todo-button js-delete-todo-button"
     > Delete </button>
     `;
     todoListHTML += html;
@@ -49,7 +47,27 @@ function renderTodoList(){
     }
     */
     document.querySelector('.js-todo-list').innerHTML = todoListHTML;
+    /* As you can see in the let html =``; its just a string and we havent put that button on the page too, we kept that button on page on the above line using .innerHTML=todoListHTML;
+
+    Other problem: we have multiple delete buttons too and querySelector only gives us the first one. But we have to select all the buttons n the page that matches this criteoria. so we can use querySelectorAll: will gives us all the elements on the page that has the class .js-delete-todo-button class.
+    */
+
+   
+    document.querySelectorAll('.js-delete-todo-button')
+    .forEach((deleteButton, index) => {
+        deleteButton.addEventListener('click', () =>{
+          todoList.splice(index, 1);
+          renderTodoList();
+        });
+    });
+     /* To summamrize, we used querySelectorAll to get a list of all delete buttons on the page and then we loop through the list using forEach
+    and for each delete button we added a click event listener
+    */
 }
+
+document.querySelector('.js-add-todo-button').addEventListener('click', () => {
+  addTodo();
+});
 
 function addTodo() {
   const inputElement = document.querySelector('.js-name-input');

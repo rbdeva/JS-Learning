@@ -91,6 +91,103 @@
     buttonElement.removeEventListener('click', eventListener);
     /* output is click2 and it wont run 1st function because we removed it*/
 
+    /* More features of functions as value 
+    2 more array methods: filter() and map()
+   
+   filter():
+   [1, -3, 5] => [1, 5]->Negative number removed.
+   filter works same way as forEach and has 2 parameters: value and index.
+   Here, filter takes the first value, which mean 1and saved in parameter 'value' and run the function and then takes the second value saved it in 'value' parameter and runs the function and so on.
+
+   .filter():
+   1. created a new array[]
+   2. If inner function return true,
+          => put vaue in new array
+   3. If inner function return false,
+          => not put value in new array
+   
+    */
+
+
+   console.log( [1,-3,5].filter((value, index)=>{
+        return true;
+    }));  /* Output: [1,-3,5] */
+
+    
+   console.log( [1,-3,5].filter((value, index)=>{
+        return false;
+    }));  /* Output: [] */
+
+    /* [1, -3, 5] => [1, 5]->Negative number removed. 
+    return true is number is positive and return false if number is negative*/
+
+    console.log( [1,-3,5].filter((value, index)=>{
+      /* 
+        if(value>=0){
+          return true;
+        }
+        else{
+          false;
+        } 
+          /* Output: [1, 5] */
+          return value>=0;
+          /* Output: [1, 5] the above return value>=0 does ssame thing as abve if and else*/
+  
+    })); 
+
+    /*map worsk same as forEach and filter:
+
+    1. create a new array
+
+    2. whatever we return 
+        => added to the new array
+        .map() transforms an array into new array
+    
+    */
+
+    console.log([1, 1, 3].map((value, index)=>{
+      return 10;  
+    })); /* output: [10, 10, 10]*/
+
+    console.log([1, 1, 3].map((value, index)=>{
+      return value+10;  
+    })); /* output: [11, 11, 13]*/
+
+    console.log([1, 1, 3].map((value, index)=>{
+      return 2*value;  
+    })); /* output: [2, 2, 6]*/
+
+
+    /* Shortcuts of arrow functions 
+    We are not using index here so we can remove it and a we have only one parameter we can alos remove ()
+    
+    If we hace only one line of code then we can put the code in one line and { } and return are optional*/
+    console.log([1, 1, 3].map(value => value*2 )); /* output: [2, 2, 6]*/
+
+
+    /* Closure: A feature of functions
+
+    -If a function has access to a vlalue, it will always have access to that value.
+    Value gets packed together(enclosed) with the function.
+
+    Closures are actually happen naturally when we are writng js code.
+
+    In this lesson:
+
+    1. Functions are values
+    2. setTimeout() and setInterval()
+    3. forEach()
+    4. Arrow functions, .addEventListener()
+    5. .filter and .map
+    6. Closure
+
+    */
+
+    
+    
+    
+
+
 
       
 
